@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest  # Uses pre-installed Maven & JDK, no sudo needed
+  name: Default  # Uses pre-installed Maven & JDK, no sudo needed
 
 steps:
 # Step 1: Build your Java project and run tests
