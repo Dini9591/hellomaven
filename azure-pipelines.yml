@@ -19,15 +19,15 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 
-# # Step 2: Publish JUnit test results (shows tests in Azure UI)
-# - task: PublishTestResults@2
-#   inputs:
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     failTaskOnFailedTests: true
+# Step 2: Publish JUnit test results (shows tests in Azure UI)
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    failTaskOnFailedTests: true
 
-# # Optional Step 3: Publish JaCoCo code coverage report (if JaCoCo is configured)
-# - task: PublishCodeCoverageResults@1
-#   inputs:
-#     codeCoverageTool: 'JaCoCo'
-#     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/target/site/jacoco/jacoco.xml'
-#     reportDirectory: '$(System.DefaultWorkingDirectory)/**/target/site/jacoco'
+# Optional Step 3: Publish JaCoCo code coverage report (if JaCoCo is configured)
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/target/site/jacoco/jacoco.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/target/site/jacoco'
